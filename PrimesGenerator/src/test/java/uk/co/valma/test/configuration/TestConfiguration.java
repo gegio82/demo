@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import uk.co.valma.service.AdvancedPrimeCalculator;
-import uk.co.valma.service.BasicPrimeCalculator;
+import uk.co.valma.service.CachedPrimeCalculator;
 import uk.co.valma.service.Java7Calculator;
 import uk.co.valma.service.Java7Calculator2;
 import uk.co.valma.service.PrimeCalculator;
@@ -19,7 +19,7 @@ public class TestConfiguration {
 	@Bean
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	PrimeCalculator primeCalculator() {
-		return new BasicPrimeCalculator();
+		return new CachedPrimeCalculator();
 	}	
 	@Bean
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
