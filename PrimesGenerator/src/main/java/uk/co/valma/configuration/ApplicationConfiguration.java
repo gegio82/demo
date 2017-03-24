@@ -6,7 +6,7 @@ import javax.ws.rs.core.MediaType;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import uk.co.valma.service.BasicPrimeCalculator;
+import uk.co.valma.service.CachedPrimeCalculator;
 import uk.co.valma.service.PrimeCalculator;
 
 
@@ -16,6 +16,6 @@ public class ApplicationConfiguration {
 	@Bean
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	PrimeCalculator primeCalculator() {
-		return new BasicPrimeCalculator();
+		return new CachedPrimeCalculator();
 	}
 }
